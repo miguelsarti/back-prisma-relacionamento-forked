@@ -3,7 +3,17 @@ import prisma from "../../prisma/prisma.js";
 class CardModel {
   // Obter todas as cartas
   async findAll() {
+    // Raridade: Ultra Rare
+    // Como fica maior ou igual que em inglês? Resposta: grater than
     const cartas = await prisma.card.findMany({
+      /*bwhere: {
+        rarity: "Ultra Rare",
+      }, */
+       where: {
+        attackPoints : {
+          gte: 9000,
+        }, 
+      }, 
       orderBy: {
         createdAt: "desc",
       },
