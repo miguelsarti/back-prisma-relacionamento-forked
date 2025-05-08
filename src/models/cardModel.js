@@ -9,10 +9,15 @@ class CardModel {
       /*bwhere: {
         rarity: "Ultra Rare",
       }, */
-       where: {
+       /* where: {
         attackPoints : {
-          gte: 9000,
+          lte: 8000, // Menor ou igual a 8000
         }, 
+      }, */
+      where: {
+        attackPoints : {
+          gte: 8000, // Maior ou igual a 8000
+        },
       }, 
       orderBy: {
         createdAt: "desc",
